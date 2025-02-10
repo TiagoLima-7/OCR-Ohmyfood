@@ -1,5 +1,286 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto";
 }
+
+a:visited, a:link, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #F6F6F6;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logo {
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+header .logo a img {
+  width: 197px;
+  height: auto;
+}
+header .location {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EAEAEA;
+  gap: 17px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: #353535;
+}
+header .location i {
+  width: 12px;
+  height: 16px;
+}
+header .location p {
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 287px;
+  text-align: center;
+  margin-bottom: 57px;
+}
+main .hero-info .title {
+  font-size: 24px;
+  font-weight: bold;
+  width: 75%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+main .hero-info .hero-text {
+  width: 90%;
+  font-size: 18px;
+  font-weight: 300;
+  padding-bottom: 40px;
+}
+main .hero-info button {
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+main .steps-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 20px 68px 20px;
+  background-color: #FFFFFF;
+}
+main .steps-container .title {
+  font-size: 24px;
+  font-weight: 700;
+}
+main .steps-container .steps-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 25px;
+  padding: 12px;
+}
+main .steps-container .steps-cards-container .steps-cards {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  padding-left: 34px;
+  gap: 22px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+}
+main .steps-container .steps-cards-container .steps-cards span {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356DC;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50%;
+  position: absolute;
+  left: -12px;
+  color: #FFFFFF;
+}
+main .steps-container .steps-cards-container .steps-cards i {
+  color: #7e7e7e;
+}
+main .steps-container .steps-cards-container .steps-cards:last-child i {
+  color: #9356DC;
+}
+main section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 17px;
+  gap: 18px;
+  margin-bottom: 66px;
+}
+main section .section-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+main section .restaurant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 251px;
+  background-color: #FFFFFF;
+  position: relative;
+  border-radius: 15px;
+}
+main section .restaurant-card .nouveau {
+  position: absolute;
+  width: 80px;
+  height: 29px;
+  top: 15px;
+  right: 15px;
+  background-color: #99E2D0;
+  color: #008766;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+main section .restaurant-card img {
+  width: 100%;
+  height: 175px;
+  background-size: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+main section .restaurant-card .restaurant-info {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 77px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+main section .restaurant-card .restaurant-info .restaurant-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main section .restaurant-card .restaurant-info .restaurant-text h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+main section .restaurant-card .restaurant-info .restaurant-text h5 {
+  font-size: 17px;
+  font-weight: 300;
+}
+main section .restaurant-card .restaurant-info .like {
+  z-index: 200;
+  position: relative;
+  cursor: pointer;
+}
+main section .restaurant-card .restaurant-info .like input[type=checkbox] {
+  display: none;
+}
+main section .restaurant-card .restaurant-info .like .fa-heart {
+  font-size: 22px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+main section .restaurant-card .restaurant-info .like .fa-solid {
+  display: none;
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main section .restaurant-card .restaurant-info input[type=checkbox]:checked ~ label .fa-regular {
+  display: none; /* Masque l'icône fa-regular quand la checkbox est cochée */
+}
+main section .restaurant-card .restaurant-info input[type=checkbox]:checked ~ label .fa-solid {
+  display: inline-block; /* Affiche l'icône fa-solid quand la checkbox est cochée */
+}
+
+footer {
+  width: 100%;
+  height: 186px;
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  color: #FFFFFF;
+  padding: 22px;
+  gap: 22px;
+}
+footer h2 {
+  font-family: "Shrikhand";
+  font-size: 18px;
+  font-weight: 400;
+}
+footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 16px;
+  gap: 7px;
+}
+footer .footer-info div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+footer .footer-info div i {
+  font-size: 12px;
+  width: 19px;
+}/*# sourceMappingURL=style.css.map */
