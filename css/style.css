@@ -32,14 +32,24 @@ header div {
 }
 header .logo {
   height: 63px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 header .logo a img {
   width: 197px;
   height: auto;
+}
+header .back {
+  height: 30px;
+  width: 30px;
+  translate: -30px 0;
+}
+header .restaurant-page {
+  flex-direction: row;
+  justify-content: center;
+  gap: 42px;
+}
+header .restaurant-page a img {
+  translate: -30px 0;
 }
 header .location {
   height: 50px;
@@ -85,18 +95,6 @@ main .hero-info .hero-text {
   font-size: 18px;
   font-weight: 300;
   padding-bottom: 40px;
-}
-main .hero-info button {
-  width: 218px;
-  height: 50px;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-  font-size: 16px;
-  font-weight: 500;
-  color: #FFFFFF;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 main .steps-container {
   width: 100%;
@@ -252,6 +250,163 @@ main section .restaurant-card .restaurant-info .like .fa-solid {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.3s;
+}
+main .btn {
+  width: 218px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+main .restaurant-photo {
+  height: 275px;
+  width: 100%;
+}
+main .restaurant-photo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+main .menu {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 15px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  align-items: center;
+  margin-top: -32px;
+  background-color: #FFFFFF;
+}
+main .menu .restaurant-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+main .menu .restaurant-title h1 {
+  font-family: "Shrikhand";
+  font-size: 28px;
+}
+main .menu .restaurant-title i {
+  font-size: 22px;
+  padding-left: 40px;
+}
+main .menu .menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+main .menu .menu-list h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+main .menu .menu-list h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+}
+main .menu .menu-list .dishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+main .menu .menu-list .dishes-list .dish {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+main .menu .menu-list .dishes-list .dish .dish-toggle {
+  display: none;
+}
+main .menu .menu-list .dishes-list .dish .dish-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 69px;
+  padding: 0 15px;
+}
+main .menu .menu-list .dishes-list .dish .dish-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+  justify-content: center;
+  max-width: 280px;
+}
+main .menu .menu-list .dishes-list .dish .dish-text h3 {
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .menu .menu-list .dishes-list .dish .dish-text h4 {
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .menu .menu-list .dishes-list .dish .prix {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  padding: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  translate: 79px 0;
+  transition: 0.3s ease;
+}
+main .menu .menu-list .dishes-list .dish .prix p {
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+main .menu .menu-list .dishes-list .dish .prix .select {
+  height: 69px;
+  width: 59px;
+  background-color: #99E2D0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .menu .menu-list .dishes-list .dish .prix .select i {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+main .menu .menu-list .dishes-list .dish-toggle:checked ~ .dish-label .prix {
+  transform: translateX(-59px);
+}
+main .menu .menu-list .dishes-list .dish-toggle:checked ~ .dish-label .dish-text {
+  max-width: 220px;
 }
 
 footer {
