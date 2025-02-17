@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: $background;
+    // background-color: $background;
 }
 
 header{
@@ -39,8 +39,12 @@ header{
     .logo {
         height: 63px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        z-index: 3;
+        transition: 0.3s ease;
+        display: flex;
+        align-items: center;
         a img {
-            width: 197px;
+            width: 162px;
             height: auto;
         }
     }
@@ -69,6 +73,7 @@ header{
         gap: 17px;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         color: #353535;
+        z-index: 2;
         i {
            width: 12px;
            height: 16px;
@@ -87,11 +92,13 @@ main {
     .hero-info {
         display: flex;
         flex-direction: column;
+        width: 100%;
         // justify-content: center;
         align-items: center;
-        height: 287px;
+        // height: 287px;
         text-align: center;
-        margin-bottom: 57px;
+        padding-bottom: 65px;
+        background-color: $background;
         // padding: 40px 42px 60px 42px;
         .title{
             font-size: 24px;
@@ -101,7 +108,6 @@ main {
             padding-bottom: 10px;
         }
         .hero-text{
-            width: 90%;
             font-size: 18px;
             font-weight: 300;
             padding-bottom: 40px;
@@ -115,6 +121,11 @@ main {
         justify-content: center;
         padding: 50px 20px 68px 20px;
         background-color: #FFFFFF;
+
+        .fonctionnement-container {
+            width: 100%;
+            max-width: 1080px;
+        }
 
     
         .title {
@@ -131,6 +142,7 @@ main {
     
             .steps-cards {
                 width: 100%;
+                max-width: 335px;
                 height: 72px;
                 display: flex;
                 justify-content: flex-start;
@@ -142,6 +154,7 @@ main {
                 position: relative;
                 font-size: 16px;
                 font-weight: 500;
+                box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15) ;
     
                 span {
                     width: 24px;
@@ -171,19 +184,33 @@ main {
         }
     }
 
-    section {
+    .restaurants-section {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 17px;
+        padding: 65px 17px;
         gap: 18px;
-        margin-bottom: 66px;
+        background-color: $background;
+
+        .restaurants-container {
+            width: 100%;
+            max-width: 1080px;
+        }
         
         .section-title {
             font-size: 24px;
             font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .restaurants {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1080px;
+            gap: 18px;
         }
 
         .restaurant-card {
@@ -196,6 +223,7 @@ main {
             background-color: #FFFFFF;
             position: relative;
             border-radius: 15px;
+            box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
 
             .nouveau{
                 position: absolute;
@@ -243,44 +271,46 @@ main {
                         font-weight: 300;
                     }
                 }
-
-                .like:hover .fa-regular{
-                    opacity: 0;
-                    transition: 0.3s;
-                }
-                .like:hover .fa-solid{
-                    // opacity: 1;
-                    font-size: 22px;
-                    transition: 0.3s;
-                }
-                .like {
-                    z-index: 2;
-                    position: relative;
-                    cursor: pointer;
-                    width: 22px;
-                    height: 22px;
-                }
-                .like .fa-heart{
-                    position: absolute;
-                    // left: 50%;
-                    // top: 50%;
-                    // translate: -50% -50%;
-                }
-                .like .fa-regular {
-                    opacity: 1;
-                    transition: 0.3s;
-                    font-size: 22px;
-                }
-                .like .fa-solid{
-                    font-size: 0;
-                    background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-                    background-clip: text;
-                    -webkit-background-clip: text; //Clip Text
-                    -webkit-text-fill-color: transparent; //Transparent Text to shox gradient
-                    transition: 0.3s;
-                }
             }
         }
+    }
+
+    .like:hover .fa-regular{
+        // opacity: 0;
+        font-size: 0;
+        transition: 0.3s;
+    }
+    .like:hover .fa-solid{
+        // opacity: 1;
+        font-size: 22px;
+        transition: 0.3s;
+        transition-delay: 0.3s;
+    }
+    .like {
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+        width: 22px;
+        height: 22px;
+    }
+    .like .fa-heart{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+    }
+    .like .fa-regular {
+        opacity: 1;
+        transition: 0.3s;
+        font-size: 22px;
+    }
+    .like .fa-solid{
+        font-size: 0;
+        background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+        background-clip: text;
+        -webkit-background-clip: text; //Clip Text
+        -webkit-text-fill-color: transparent; //Transparent Text to shox gradient
+        transition: 0.3s;
     }
     .btn {
         width: 218px;
@@ -293,6 +323,14 @@ main {
         font-weight: 500;
         color: #FFFFFF;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%), rgba(255, 255, 255, 0.15);
+        background-blend-mode: overlay;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
     }
 
     .restaurant-photo {
@@ -306,16 +344,17 @@ main {
     }
 
     .menu {
-        z-index: 2;
+        width: 100%;
+        max-width: 1055px;
+        padding: 32px 17px 40px;
         display: flex;
         flex-direction: column;
         gap: 40px;
-        padding-top: 15px;
         border-top-left-radius: 32px;
         border-top-right-radius: 32px;
         align-items:  center;
         margin-top: -32px;
-        background-color: #FFFFFF;
+        background-color: $background;
 
         .restaurant-title {
             display: flex;
@@ -325,10 +364,7 @@ main {
             h1 {
                 font-family: 'Shrikhand';
                 font-size: 28px;
-            }
-            i {
-                font-size: 22px;
-                padding-left: 40px;
+                margin-right: 40px;
             }
         }
 
@@ -339,6 +375,7 @@ main {
             align-items: flex-start;
             gap: 12px;
             width: 100%;
+            max-width: 634px;
 
             h2 {
                 font-weight: 300;
@@ -388,6 +425,7 @@ main {
                         align-items: center;
                         height: 69px;
                         padding: 0 15px;
+                        width: 100%; //pour permetre de cliquer toute la carte
                     }
 
                     .dish-text {
@@ -467,7 +505,6 @@ main {
 
 footer {
     width: 100%;
-    height: 186px;
     display: flex;
     flex-direction: column;
     background-color: #353535;
@@ -478,6 +515,7 @@ footer {
         font-family: 'Shrikhand';
         font-size: 18px;
         font-weight: 400;
+        width: 139px;
     }
     .footer-info{
         display: flex;
@@ -496,5 +534,71 @@ footer {
                 width: 19px;
             }
         }
+    }
+}
+
+@media (min-width: 768px) {
+    
+    header .logo{
+        height: 96px;
+    }
+
+    main .steps-container .steps-cards-container{
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main .restaurant-photo {
+        height: 315px;
+    }
+
+    main .restaurants-section .section-title {
+        margin-bottom: 28px;
+    }
+
+    footer {
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 15px;
+
+        .footer-info {
+            flex-direction: row;
+            gap: 7px;
+        }
+
+        .footer-info > * {
+            width: 130px;
+        }
+
+        .footer-info > *:nth-child(1),
+        .footer-info > *:nth-child(2) {
+            width: 190px;
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+    main .restaurants-section{
+        align-items: center;
+
+        .section-title {
+            align-self: flex-start;
+        }
+
+        .restaurants {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 100px;
+            grid-row-gap:50px;
+        }
+
+    } 
+    
+    main .restaurant-photo {
+        height: 383px;
+    }
+    main .steps-container {
+        align-items: center;
     }
 }
