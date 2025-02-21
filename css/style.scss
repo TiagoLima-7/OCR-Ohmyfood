@@ -1,6 +1,6 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
-$terciary: #99E2D0;
+$terciary: #99e2d0;
 $background: #F6F6F6;
 
 * {
@@ -502,40 +502,169 @@ main {
         }
     }
 
+
     .loader {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: rgb(199,199,199);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        animation: fadeOut 3s forwards;
+        animation: fadeOut 0.5s forwards 2.5s; 
+        padding: 300px 5%;
+      
+        .loader-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+        //   border: 1px solid red;
+          -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+          box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+      
+          svg {
+            stroke: #000;
+            width: 150px;
+            height: 150px;
+            transition: all 0.3s ease;
+          }
+      
+          .loader-title {
+            span {
+              color: #FFFFFF;
+              font-family: 'Shrikhand';
+              font-size: 48px;
+              animation: fadeIn 1s linear forwards;
+              transition: all 0.3s ease;
+            }
+          }
+        }
       }
       
-      .loader::after {
-        content: "";
-        width: 50px;
-        height: 50px;
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid #3498db;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
+      .animated-path {
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+        animation: draw 1s linear forwards, fill 750ms ease-in forwards 1s;
       }
       
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      @keyframes fill {
+        from {
+          fill: transparent;
+        }
+        to {
+          fill: #FFFFFF;
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
       }
       
       @keyframes fadeOut {
         0% { opacity: 1; }
-        90% { opacity: 1; }
+        // 50% { opacity: 1; }
         100% { opacity: 0; visibility: hidden; }
       }
+      
+      
+
+
+
+    // .loader {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-color: rgba(0, 0, 0, 1);
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     z-index: 9999;
+    //     animation: fadeOut 1s forwards 2.5s;
+    //     padding: 300px;
+
+    //     .loader-container{
+    //         width: 100%;
+    //         height: 100%;
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //         justify-content: space-evenly;
+    //         border: 1px solid red;
+
+    //         svg{
+    //             stroke:  $terciary;
+    //         }
+
+    //         .loader-title span{
+    //             color: $primary;
+    //             font-family: 'Shrikhand';
+    //             font-size: 48px;
+                
+    //         }
+    //     }
+    //   }
+      
+    //   .animated-path {
+    //     // stroke: #ffffff;
+    //     stroke-width: 2;
+    //     fill: none;
+    //     stroke-dasharray: 2000;
+    //     stroke-dashoffset: 2000;
+    //     animation: draw 1.5s linear forwards, fill 1s ease-in forwards 1s;
+    //   }
+      
+    //   @keyframes draw {
+    //     to {
+    //       stroke-dashoffset: 0;
+    //     }
+    //   }
+      
+    //   @keyframes fill {
+    //     from {
+    //       fill: transparent;
+    //     }
+    //     to {
+    //       fill: #7e7e7e;
+    //     }
+    //   }
+      
+      
+    //   .loader::after {
+    //     content: "";
+    //     width: 50px;
+    //     height: 50px;
+    //     border: 5px solid #f3f3f3;
+    //     border-top: 5px solid #3498db;
+    //     border-radius: 50%;
+    //     animation: spin 1s linear infinite;
+    //   }
+      
+    //   @keyframes spin {
+    //     0% { transform: rotate(0deg); }
+    //     100% { transform: rotate(360deg); }
+    //   }
+      
       
 }
 
@@ -574,6 +703,16 @@ footer {
 }
 
 @media (min-width: 768px) {
+
+    main .loader .loader-container {
+        svg{
+         width: 200px;
+         height: 200px;
+       }
+       .loader-title span {
+        font-size: 64px;
+       }
+    }
     
     header .logo{
         height: 96px;
@@ -615,26 +754,39 @@ footer {
 
 
 @media (min-width: 1024px) {
-    main .restaurants-section{
-        align-items: center;
 
-        .section-title {
-            align-self: flex-start;
+    main {
+        .loader .loader-container {
+            svg{
+            width: 250px;
+            height: 250px;
+        }
+        .loader-title span {
+            font-size: 72px;
+        }
         }
 
-        .restaurants {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 100px;
-            grid-row-gap:50px;
-        }
+        .restaurants-section{
+            align-items: center;
 
-    } 
-    
-    main .restaurant-photo {
-        height: 383px;
-    }
-    main .steps-container {
-        align-items: center;
+            .section-title {
+                align-self: flex-start;
+            }
+
+            .restaurants {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 100px;
+                grid-row-gap:50px;
+            }
+
+        } 
+        
+        main .restaurant-photo {
+            height: 383px;
+        }
+        main .steps-container {
+            align-items: center;
+        }
     }
 }

@@ -203,7 +203,7 @@ main .restaurants-section .restaurant-card .nouveau {
   height: 29px;
   top: 15px;
   right: 15px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #008766;
   display: flex;
   justify-content: center;
@@ -353,7 +353,7 @@ main .menu .menu-list h2:after {
   left: 0;
   width: 40px;
   height: 3px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
 }
 main .menu .menu-list .dishes-list {
   display: flex;
@@ -424,7 +424,7 @@ main .menu .menu-list .dishes-list .dish .prix p {
 main .menu .menu-list .dishes-list .dish .prix .select {
   height: 69px;
   width: 59px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
@@ -447,35 +447,66 @@ main .loader {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(199, 199, 199);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeOut 3s forwards;
+  animation: fadeOut 0.5s forwards 2.5s;
+  padding: 300px 5%;
 }
-main .loader::after {
-  content: "";
-  width: 50px;
-  height: 50px;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+main .loader .loader-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-@keyframes spin {
+main .loader .loader-container svg {
+  stroke: #000;
+  width: 150px;
+  height: 150px;
+  transition: all 0.3s ease;
+}
+main .loader .loader-container .loader-title span {
+  color: #FFFFFF;
+  font-family: "Shrikhand";
+  font-size: 48px;
+  animation: fadeIn 1s linear forwards;
+  transition: all 0.3s ease;
+}
+main .animated-path {
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 1s linear forwards, fill 750ms ease-in forwards 1s;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #FFFFFF;
+  }
+}
+@keyframes fadeIn {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   100% {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
 @keyframes fadeOut {
   0% {
-    opacity: 1;
-  }
-  90% {
     opacity: 1;
   }
   100% {
@@ -519,6 +550,13 @@ footer .footer-info div i {
 }
 
 @media (min-width: 768px) {
+  main .loader .loader-container svg {
+    width: 200px;
+    height: 200px;
+  }
+  main .loader .loader-container .loader-title span {
+    font-size: 64px;
+  }
   header .logo {
     height: 96px;
   }
@@ -550,6 +588,13 @@ footer .footer-info div i {
   }
 }
 @media (min-width: 1024px) {
+  main .loader .loader-container svg {
+    width: 250px;
+    height: 250px;
+  }
+  main .loader .loader-container .loader-title span {
+    font-size: 72px;
+  }
   main .restaurants-section {
     align-items: center;
   }
@@ -562,10 +607,10 @@ footer .footer-info div i {
     grid-column-gap: 100px;
     grid-row-gap: 50px;
   }
-  main .restaurant-photo {
+  main main .restaurant-photo {
     height: 383px;
   }
-  main .steps-container {
+  main main .steps-container {
     align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */
