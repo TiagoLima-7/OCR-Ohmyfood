@@ -16,6 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 header {
@@ -449,7 +451,7 @@ main .loader {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(199, 199, 199);
+  background-color: #99e2d0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -552,15 +554,15 @@ footer .footer-info div i {
 }
 
 @media (min-width: 768px) {
+  header .logo {
+    height: 96px;
+  }
   main .loader .loader-container svg {
     width: 200px;
     height: 200px;
   }
   main .loader .loader-container .loader-title span {
     font-size: 64px;
-  }
-  header .logo {
-    height: 96px;
   }
   main .steps-container .steps-cards-container {
     flex-direction: row;
