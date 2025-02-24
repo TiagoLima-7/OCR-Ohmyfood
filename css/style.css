@@ -41,18 +41,16 @@ header .logo a img {
   width: 162px;
   height: auto;
 }
-header .back {
-  height: 30px;
-  width: 30px;
-  translate: -30px 0;
-}
 header .restaurant-page {
+  position: relative;
   flex-direction: row;
   justify-content: center;
   gap: 42px;
 }
-header .restaurant-page a img {
-  translate: -30px 0;
+header .restaurant-page .back {
+  position: absolute;
+  left: 30px;
+  font-size: 18px;
 }
 header .location {
   height: 50px;
@@ -105,12 +103,16 @@ main .steps-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 50px 20px 68px 20px;
   background-color: #FFFFFF;
 }
 main .steps-container .fonctionnement-container {
   width: 100%;
   max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .steps-container .title {
   font-size: 24px;
@@ -569,6 +571,9 @@ footer .footer-info div i {
   }
   main .restaurants-section .section-title {
     margin-bottom: 28px;
+  }
+  main .steps-container .fonctionnement-container {
+    align-items: normal;
   }
   footer {
     flex-direction: row-reverse;
