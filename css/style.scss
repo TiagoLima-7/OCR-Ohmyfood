@@ -1,6 +1,6 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
-$terciary: #99e2d0;
+$tertiary: #99e2d0;
 $background: #F6F6F6;
 
 * {
@@ -244,7 +244,7 @@ main {
                 height: 29px;
                 top: 15px;
                 right: 15px;
-                background-color: $terciary;
+                background-color: $tertiary;
                 color: #008766;
                 display: flex;
                 justify-content: center;
@@ -311,7 +311,7 @@ main {
         position: absolute;
         left: 50%;
         top: 50%;
-        translate: -50% -50%;
+        transform:translate(-50%, -50%);
     }
     .like .fa-regular {
         opacity: 1;
@@ -406,7 +406,7 @@ main {
                 left: 0;
                 width: 40px;
                 height: 3px;
-                background-color: $terciary;
+                background-color: $tertiary;
             }
 
             .dishes-list {
@@ -489,7 +489,7 @@ main {
                         .select {
                             height: 69px;
                             width: 59px;
-                            background-color: $terciary;
+                            background-color: $tertiary;
                             border-top-right-radius: 15px;
                             border-bottom-right-radius: 15px;
                             display: flex;
@@ -523,7 +523,7 @@ main {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: $terciary;
+        background-color: $tertiary;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -627,7 +627,7 @@ main {
     //         border: 1px solid red;
 
     //         svg{
-    //             stroke:  $terciary;
+    //             stroke:  $tertiary;
     //         }
 
     //         .loader-title span{
@@ -703,7 +703,7 @@ footer {
         justify-content: center;
         font-size: 16px;
         gap: 7px;
-        div {
+        a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -759,16 +759,6 @@ footer {
 
         .footer-info {
             flex-direction: row;
-            gap: 7px;
-        }
-
-        .footer-info > * {
-            width: 130px;
-        }
-
-        .footer-info > *:nth-child(1),
-        .footer-info > *:nth-child(2) {
-            width: 190px;
         }
     }
 }
@@ -808,6 +798,15 @@ footer {
         }
         main .steps-container {
             align-items: center;
+        }
+
+        footer .footer-info > * {
+            width: 130px;
+        }
+
+        .footer-info > *:nth-child(1),
+        .footer-info > *:nth-child(2) {
+            width: 190px;
         }
     }
 }

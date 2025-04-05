@@ -267,7 +267,7 @@ main .like .fa-heart {
   position: absolute;
   left: 50%;
   top: 50%;
-  translate: -50% -50%;
+  transform: translate(-50%, -50%);
 }
 main .like .fa-regular {
   opacity: 1;
@@ -542,13 +542,13 @@ footer .footer-info {
   font-size: 16px;
   gap: 7px;
 }
-footer .footer-info div {
+footer .footer-info a {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
-footer .footer-info div i {
+footer .footer-info a i {
   font-size: 12px;
   width: 19px;
 }
@@ -584,14 +584,6 @@ footer .footer-info div i {
   }
   footer .footer-info {
     flex-direction: row;
-    gap: 7px;
-  }
-  footer .footer-info > * {
-    width: 130px;
-  }
-  footer .footer-info > *:nth-child(1),
-  footer .footer-info > *:nth-child(2) {
-    width: 190px;
   }
 }
 @media (min-width: 1024px) {
@@ -619,5 +611,12 @@ footer .footer-info div i {
   }
   main main .steps-container {
     align-items: center;
+  }
+  main footer .footer-info > * {
+    width: 130px;
+  }
+  main .footer-info > *:nth-child(1),
+  main .footer-info > *:nth-child(2) {
+    width: 190px;
   }
 }/*# sourceMappingURL=style.css.map */
