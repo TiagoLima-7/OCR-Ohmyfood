@@ -793,20 +793,22 @@ footer {
 
         } 
         
-        main .restaurant-photo {
+        .restaurant-photo {
             height: 383px;
         }
-        main .steps-container {
+        .steps-container {
             align-items: center;
         }
 
-        footer .footer-info > * {
-            width: 130px;
-        }
+        footer {
+            .footer-info > * {
+                width: 130px;
+            }
 
-        .footer-info > *:nth-child(1),
-        .footer-info > *:nth-child(2) {
-            width: 190px;
+            .footer-info > *:nth-child(1),
+            .footer-info > *:nth-child(2) {
+                width: 190px;
+            }
         }
     }
 }

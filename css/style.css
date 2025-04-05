@@ -606,17 +606,17 @@ footer .footer-info a i {
     grid-column-gap: 100px;
     grid-row-gap: 50px;
   }
-  main main .restaurant-photo {
+  main .restaurant-photo {
     height: 383px;
   }
-  main main .steps-container {
+  main .steps-container {
     align-items: center;
   }
   main footer .footer-info > * {
     width: 130px;
   }
-  main .footer-info > *:nth-child(1),
-  main .footer-info > *:nth-child(2) {
+  main footer .footer-info > *:nth-child(1),
+  main footer .footer-info > *:nth-child(2) {
     width: 190px;
   }
 }/*# sourceMappingURL=style.css.map */
