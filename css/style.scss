@@ -288,15 +288,14 @@ main {
         }
     }
 
-    .like:hover .fa-regular{
+    .like:hover .fa-regular{ //cacher le coeur avec font-size: 0, pendant 0.3s
         // opacity: 0;
         font-size: 0;
         transition: 0.3s;
         // transition-delay: 0.3s;
     }
-    .like:hover .fa-solid{
-        // opacity: 1;
-        font-size: 22px;
+    .like:hover .fa-solid{  //montrer le coeur plein avec font-size: 22px, avec un delay de 0.3s
+        font-size: 22px;    //pour garantir que l'animation initiale est finie
         transition: 0.3s;
         transition-delay: 0.3s;
     }
@@ -307,23 +306,24 @@ main {
         width: 22px;
         height: 22px;
     }
-    .like .fa-heart{
+    .like .fa-heart{ //style commun aux 2 coeurs
         position: absolute;
         left: 50%;
         top: 50%;
         transform:translate(-50%, -50%);
     }
-    .like .fa-regular {
+    .like .fa-regular { //visible par defaut
         opacity: 1;
         transition: 0.3s;
         font-size: 22px;
+        transition-delay: 0.3s;
     }
-    .like .fa-solid{
+    .like .fa-solid{ //caché par defaut
         font-size: 0;
         background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
         background-clip: text;
         -webkit-background-clip: text; //Clip Text
-        -webkit-text-fill-color: transparent; //Transparent Text to shox gradient
+        -webkit-text-fill-color: transparent; // Text transparent pour montrer le gradient
         transition: 0.3s;
     }
     .btn {
@@ -409,25 +409,39 @@ main {
                 background-color: $tertiary;
             }
 
+            @keyframes dish-animation {
+                0% {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
             .dishes-list {
                 display: flex;
                 flex-direction: column;
                 gap: 12px;
                 width: 100%;
-                
+                overflow: hidden;
+            
                 .dish {
-                    display: flex;
-                    flex-direction: row;
-                    background-color: #FFFFFF;
-                    border-radius: 15px;
-                    // justify-content: space-between;
-                    // align-items: center;
-                    // height: 69px;
-                    // padding: 0 15px;
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-                    overflow: hidden;
+                    width: 100%;
+                    height: 70px;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
                     position: relative;
-                    cursor: pointer;
+                    overflow: hidden;
+                    animation: dish-animation 1.5s both;
+                    
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            animation-delay: $i * 1.5s / 10;
+                        }
+                    }
+            
 
                     .dish-toggle {
                         display: none;

@@ -273,6 +273,7 @@ main .like .fa-regular {
   opacity: 1;
   transition: 0.3s;
   font-size: 22px;
+  transition-delay: 0.3s;
 }
 main .like .fa-solid {
   font-size: 0;
@@ -359,21 +360,61 @@ main .menu .menu-list h2:after {
   height: 3px;
   background-color: #99e2d0;
 }
+@keyframes dish-animation {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 main .menu .menu-list .dishes-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
+  overflow: hidden;
 }
 main .menu .menu-list .dishes-list .dish {
-  display: flex;
-  flex-direction: row;
-  background-color: #FFFFFF;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  width: 100%;
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   position: relative;
-  cursor: pointer;
+  overflow: hidden;
+  animation: dish-animation 1.5s both;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(1) {
+  animation-delay: 0.15s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(2) {
+  animation-delay: 0.3s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(3) {
+  animation-delay: 0.45s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(4) {
+  animation-delay: 0.6s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(5) {
+  animation-delay: 0.75s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(6) {
+  animation-delay: 0.9s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(7) {
+  animation-delay: 1.05s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(8) {
+  animation-delay: 1.2s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(9) {
+  animation-delay: 1.35s;
+}
+main .menu .menu-list .dishes-list .dish:nth-child(10) {
+  animation-delay: 1.5s;
 }
 main .menu .menu-list .dishes-list .dish .dish-toggle {
   display: none;
