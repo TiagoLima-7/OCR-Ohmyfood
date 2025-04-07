@@ -114,7 +114,7 @@ main .steps-container .fonctionnement-container {
   max-width: 1080px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 main .steps-container .title {
   font-size: 24px;
@@ -125,11 +125,11 @@ main .steps-container .steps-cards-container {
   flex-direction: column;
   gap: 25px;
   padding-top: 25px;
-  padding: 12px;
+  padding-left: 12px;
+  width: 100%;
 }
 main .steps-container .steps-cards-container .steps-cards {
   width: 100%;
-  max-width: 335px;
   height: 72px;
   display: flex;
   justify-content: flex-start;
@@ -480,11 +480,13 @@ main .menu .menu-list .dishes-list .dish .prix .select i {
   font-size: 20px;
   color: #FFFFFF;
 }
-main .menu .menu-list .dishes-list .dish-toggle:checked ~ .dish-label .prix {
+main .dishes-list .dish:hover .prix {
   transform: translateX(-59px);
+  transition: transform 0.3s ease;
 }
-main .menu .menu-list .dishes-list .dish-toggle:checked ~ .dish-label .dish-text {
+main .dishes-list .dish:hover .dish-text {
   max-width: 220px;
+  transition: max-width 0.3s ease;
 }
 main .loader {
   position: fixed;
